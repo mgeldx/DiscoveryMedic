@@ -1,0 +1,295 @@
+<html>
+	<!-- Head -->
+	<head>
+		<meta charset="UTF-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="sprofile.css">
+		<title>Discovery Medical Store</title>
+	</head>
+	
+	<!-- Body -->
+	<body>
+		<!-- Header -->
+		<section id ="header">
+			<header>
+				<h2 class="logo">Discovery Medical Store</h2>							
+				<div>
+					<nav class="navigation">
+						<a href="index.html">Home</a>
+						<a href="products.html">Products</a>
+						<a href="mycart.html">Cart</a>
+						<a href="myorders.html">Orders</a>
+						<a href="myprofile.html">Profile</a>          
+						<a href="login.html">Login</a>
+						<a href="index.html">Logout</a>
+					</nav>
+				</div>				
+		  </header>	
+		</section>
+		
+		<main>
+			<!-- Profile -->
+			<h1>Profile</h1>
+
+			  <h2>Personal Information</h2>
+			  <table id="profile-table">
+				<thead>
+				  <tr>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>Age</th>
+					<th>Address</th>
+					<th>Phone</th>
+					<th>Email</th>
+				  </tr>
+				</thead>
+				<tbody id="profile-data">
+				  <!-- Profile data will be dynamically added here -->
+				</tbody>
+			  </table>
+
+			  <h2>Prescription Details</h2>
+			  <table id="prescription-table">
+				<thead>
+				  <tr>
+					<th>Customer ID</th>
+					<th>Phone</th>
+					<th>Delivery Date</th>
+					<th>Medicine Name</th>
+					<th>Strength/Dosage</th>
+					<th>Quantity</th>
+				  </tr>
+				</thead>
+				<tbody id="prescription-data">
+				  <!-- Prescription data will be dynamically added here -->
+				</tbody>
+			  </table>
+  
+			
+			<!-- Chat -->
+			<button id="chatButton" class="chat-button">
+				<span class="icon">
+					<ion-icon name="chatbox"></ion-icon>
+				</span>
+			</button>						
+		</main>
+		<main>			
+			<section id="admin-section" class="section">
+				<div class="wrapper">
+					<div class="form-box admin">
+						<h2>Update Profile</h2>
+						<form action="upload.php" method="post" enctype="multipart/form-data">
+							<div class="form-columns">	
+								<div class="form-column">
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Name</label>
+										
+									</div>
+									
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Age</label>
+										
+									</div>
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Phone</label>
+										
+									</div>
+								</div>	
+								<div class="form-column">
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Surname</label>
+										
+									</div>
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Address</label>
+										
+									</div>
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Email</label>
+										
+									</div>
+									
+								</div>
+							</div>	
+							<button type="submit">Update</button>
+						</form>
+					</div>	
+				</div>
+			</section>
+		</main>	
+		<main>			
+			<section id="admin-section" class="section">
+				<div class="wrapper">
+					<div class="form-box admin">
+						<h2>Add Prescription</h2>
+						<form action="upload.php" method="post" enctype="multipart/form-data">
+							<div class="form-columns">	
+								<div class="form-column">
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">CustomerID</label>
+										
+									</div>
+									
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Delivery Date</label>
+										
+									</div>
+									
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Strength/Dosage</label>
+										
+									</div>								
+									
+								</div>	
+								<div class="form-column">
+									
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Phone</label>
+										
+									</div>
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Medicine Name</label>
+										
+									</div>
+									<div class="input-box">
+										
+										<input type="text" required>
+										<label for="name">Quantity</label>
+										
+									</div>
+																		
+								</div>
+							</div>	
+							<button type="submit">Add</button>
+						</form>
+					</div>	
+				</div>
+			</section>
+		</main>
+		
+		<!-- Footer -->			
+		<footer>
+			<div class ="col">
+				<h3 class="logo">Discovery Medical Store</h3>				
+				<p><strong>Address:</strong> Sandton, 2146, PO Box 786722</p>
+				<p><strong>Phone:</strong> 0860 99 88 77<p>
+				<p><strong>Operating hours:</strong></p>
+				<p>07:00 - 20:00 Monday to Friday<p>
+				<p>08:00 - 13:00 Saturdays</p>
+				<p>© 2023 Discovery Medical Store. All rights reserved.</p>
+			</div>
+			<div class ="col">
+				<h3 class="logo">Our Services</h3>				
+				<p><a href="products.html">Products</a></p>
+				<p><a href="mycart.html">Cart</a></p>
+				<p><a href="myorders.html">Orders</a></p>
+				<p><a href="myprofile.html" class="dropbtn">Profile</a></p>
+			</div>
+			<div class ="col">
+				<h3 class="logo">Log</h3>				
+				<p><a href="login.html">Login</a></p>
+				<p><a href="index.html">Logout</a></p>
+			</div>
+		</footer>
+		
+		<!-- Script -->
+		<script>
+		// Function to populate the profile table
+function populateProfileTable() {
+  // Retrieve profile data from localStorage or any other source
+  var profileData = {
+    name: "John",
+    surname: "Doe",
+    age: 30,
+    address: "123 Main St",
+    phone: "555-1234",
+    email: "johndoe@example.com"
+  };
+
+  // Get the profile table body
+  var profileTableBody = document.getElementById("profile-data");
+
+  // Create a row for the profile data
+  var profileRow = document.createElement("tr");
+
+  // Iterate over the profile data and create table cells
+  for (var key in profileData) {
+    if (profileData.hasOwnProperty(key)) {
+      var value = profileData[key];
+
+      // Create a table cell
+      var cell = document.createElement("td");
+      cell.textContent = value;
+
+      // Append the cell to the profile row
+      profileRow.appendChild(cell);
+    }
+  }
+
+  // Append the profile row to the profile table body
+  profileTableBody.appendChild(profileRow);
+}
+
+// Function to populate the prescription table
+function populatePrescriptionTable() {
+  // Retrieve prescription data from localStorage or any other source
+  var prescriptionData = [
+    {
+      customerId: "1",
+      phone: "555-1234",
+      deliveryDate: "2023-06-15",
+      medicineName: "Medicine A",
+      strengthDosage: "10mg",
+      quantity: 3
+    },
+    {
+      customerId: "2",
+      phone: "555-5678",
+      deliveryDate: "2023-06-20",
+      medicineName: "Medicine B",
+      strengthDosage: "20mg",
+      quantity: 5
+    }
+    // Add more prescription objects as needed
+  ];
+
+  // Get the prescription table body
+  var prescriptionTableBody = document.getElementById("prescription-data");
+
+  // Iterate over the prescription data and create rows
+  prescriptionData.forEach(function(prescription) {
+    // Create a row for the prescription data
+    var prescriptionRow = document.createElement("tr");
+
+    // Iterate over the prescription object properties and create table cells
+    for (var key in prescription) {
+      if (prescription.hasOwnProperty(key)) {
+
+		</script>
+		
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

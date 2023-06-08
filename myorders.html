@@ -1,0 +1,140 @@
+<html>
+	<!-- Head -->
+	<head>		
+		<meta charset="UTF-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="sorders.css">
+		<title>Discovery Medical Store</title>
+		
+	</head>
+	
+	<!-- Body -->
+	<body>
+		<!-- Header -->
+		<section id ="header">
+			<header>
+				<h2 class="logo">Discovery Medical Store</h2>							
+				<div>
+					<nav class="navigation">
+						<a href="index.html">Home</a>
+						<a href="products.html">Products</a>
+						<a href="mycart.html">Cart</a>
+						<a href="myorders.html">Orders</a>
+						<a href="myprofile.html">Profile</a>          
+						<a href="login.html">Login</a>
+						<a href="index.html">Logout</a>
+					</nav>
+				</div>				
+		  </header>
+		</section>
+		
+		<main>			
+			<h1>Your Orders</h1>
+  
+			  <table id="order-table">
+				  <thead>
+					<tr>
+					  <th>Product</th>
+					  <th>Price</th>
+					  <th>Quantity</th>
+					  <th></th>
+					</tr>
+				  </thead>
+				  <tbody id="order-items">
+					<!-- Cart items will be dynamically added here -->
+				  </tbody>
+				  <tfoot>
+					<tr>
+					  <td colspan="2">Total:</td>
+					  <td id="order-total-quantity">0</td>
+					  <td id="order-total">0</td>
+					</tr>
+				  </tfoot>
+				</table>	
+			<!-- Chat -->
+			<button id="chatButton" class="chat-button">
+				<span class="icon">
+					<ion-icon name="chatbox"></ion-icon>
+				</span>
+			</button>						
+		</main>
+		
+		<!-- Footer -->			
+		<footer>
+			<div class ="col">
+				<h3 class="logo">Discovery Medical Store</h3>				
+				<p><strong>Address:</strong> Sandton, 2146, PO Box 786722</p>
+				<p><strong>Phone:</strong> 0860 99 88 77<p>
+				<p><strong>Operating hours:</strong></p>
+				<p>07:00 - 20:00 Monday to Friday<p>
+				<p>08:00 - 13:00 Saturdays</p>
+				<p>© 2023 Discovery Medical Store. All rights reserved.</p>
+			</div>
+			<div class ="col">
+				<h3 class="logo">Our Services</h3>				
+				<p><a href="products.html">Products</a></p>
+				<p><a href="mycart.html">Cart</a></p>
+				<p><a href="myorders.html">Orders</a></p>
+				<p><a href="myprofile.html" class="dropbtn">Profile</a></p>
+			</div>
+			<div class ="col">
+				<h3 class="logo">Log</h3>				
+				<p><a href="login.html">Login</a></p>
+				<p><a href="index.html">Logout</a></p>
+			</div>
+		</footer>
+		
+		<!-- Script -->
+		<script>
+		window.addEventListener("load", loadOrders);
+
+function loadOrders() {
+  var ordersData = localStorage.getItem("orders");
+  var orders = ordersData ? JSON.parse(ordersData) : [];
+
+  var orderItemsContainer = document.getElementById("order-items");
+  orderItemsContainer.innerHTML = ""; // Clear existing order items
+
+  for (var i = 0; i < orders.length; i++) {
+    var order = orders[i];
+
+    var row = document.createElement("tr");
+    var productCell = document.createElement("td");
+    var priceCell = document.createElement("td");
+    var quantityCell = document.createElement("td");
+    var totalCell = document.createElement("td");
+
+    productCell.textContent = order.productName;
+    priceCell.textContent = order.price.toFixed(2);
+    quantityCell.textContent = order.quantity;
+    totalCell.textContent = (order.price * order.quantity).toFixed(2);
+
+    row.appendChild(productCell);
+    row.appendChild(priceCell);
+    row.appendChild(quantityCell);
+    row.appendChild(totalCell);
+
+    orderItemsContainer.appendChild(row);
+  }
+
+  calculateOrderTotal(orders);
+}
+
+function calculateOrderTotal(orders) {
+  var totalQuantity = 0;
+  var totalValue = 0;
+
+  for (var i = 0; i < orders.length; i++) {
+    totalQuantity += orders[i].quantity;
+    totalValue += orders[i].price * orders[i].quantity;
+  }
+
+  document.getElementById("order-total-quantity").innerText = totalQuantity;
+  document.getElementById("order-total").innerText = totalValue.toFixed(2);
+}
+
+
+		</script>
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>
